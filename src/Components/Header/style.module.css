@@ -1,0 +1,58 @@
+/* Main Header */
+.headerContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0.5rem 1rem;
+}
+
+.searchBar {
+  width: 25%;
+}
+
+.logo {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  max-width: 20rem;
+  height: 3rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo:hover,
+.logo:active {
+  color: inherit;
+}
+
+/* Header Links  */
+.links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 25%;
+}
+
+.link {
+  font-size: 2rem;
+  padding: 0 1rem;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.link svg {
+  fill: none;
+  stroke-width: 1.5;
+  transition: 0.3s;
+}
+.link:hover svg {
+  fill: inherit;
+}

@@ -1,0 +1,26 @@
+.topper__main {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #fff;
+  padding: 4px 1rem;
+}
+
+.topper__main-icon {
+  font-size: 0.7rem;
+  margin-right: 10px;
+}
+
+.topper__main-number {
+  width: 25%;
+  text-align: left;
+}
+.topper__main-email {
+  width: 50%;
+  text-align: center;
+}
+.topper__main-delivery {
+  width: 25%;
+  text-align: right;
+}

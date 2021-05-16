@@ -1,0 +1,66 @@
+.footer__wrapper {
+  border-top: 1px solid #f1f1f1;
+}
+
+.main__footer {
+  padding: 3rem 2rem 2rem 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 80rem;
+}
+
+.main__footer-links {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.main__footer-misc {
+  width: 30%;
+}
+
+.link__column-header {
+  /* text-transform: uppercase; */
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-family: "Newsreader", serif;
+}
+
+.main__footer-link__column {
+  width: 100%;
+}
+
+.link__column-link {
+  display: block;
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+}
+
+.link__column-link:hover {
+  font-weight: 600;
+}
+
+.misc__column-header {
+  font-size: 1.3rem;
+  font-family: "Newsreader", serif;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.misc__column-social__logins {
+  display: flex;
+}
+
+.misc__column-social__icon {
+  padding: 0 0.7rem;
+}
+
+.footer__copyright {
+  text-align: center;
+  margin: 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.7px;
+}

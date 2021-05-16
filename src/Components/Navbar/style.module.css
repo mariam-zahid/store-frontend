@@ -1,0 +1,21 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 0.2rem 0.8rem;
+  z-index: 2;
+  border-bottom: 1px solid #f1f1f1;
+  background-color: #fff;
+  letter-spacing: 0.0625em;
+}
+
+.navbar__links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.navbar__link {
+  padding: 0.5rem 1rem;
+}

@@ -1,0 +1,31 @@
+.register__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100rem;
+  margin: auto;
+}
+
+.register__wrapper-children {
+  width: 50%;
+  max-width: 30rem;
+  margin: 0 1.5rem;
+}
+
+.register__sideImage img {
+  width: auto;
+  max-width: 30rem;
+}
+
+.welcome__text {
+  font-weight: 300;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.register__button {
+  width: 50%;
+  margin: 10px auto;
+}
