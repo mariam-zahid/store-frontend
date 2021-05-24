@@ -25,7 +25,7 @@ export const login =
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://shivaz-ecommerce-api.herokuapp.com/api/auth/login",
         { email, password },
         config
       );
@@ -64,7 +64,10 @@ export const logout = () => async (dispatch) => {
         refreshtoken: localStorage.getItem("refresh"),
       },
     };
-    await axios.delete("http://localhost:5000/api/auth/logout", config);
+    await axios.delete(
+      "https://shivaz-ecommerce-api.herokuapp.com/api/auth/logout",
+      config
+    );
     dispatch({
       type: REMOVE_USER_DETAILS,
     });
@@ -91,7 +94,7 @@ export const register =
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://shivaz-ecommerce-api.herokuapp.com/api/auth/register",
         { firstName, lastName, email, password },
         config
       );
