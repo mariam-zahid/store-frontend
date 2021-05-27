@@ -21,7 +21,7 @@ const Header = () => {
           </div>
 
           <Link to="/" className={` ${styles.logo}`}>
-            LOGOIPSUM
+            SHIVAZ HANDLOOM
           </Link>
 
           <div className={styles.links}>

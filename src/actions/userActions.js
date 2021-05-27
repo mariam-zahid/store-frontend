@@ -61,7 +61,7 @@ export const logout = () => async (dispatch) => {
   try {
     const config = {
       headers: {
-        refreshtoken: localStorage.getItem("refresh"),
+        refreshtoken: JSON.parse(localStorage.getItem("refresh")),
       },
     };
     await axios.delete(

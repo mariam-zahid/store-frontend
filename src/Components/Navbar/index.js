@@ -13,32 +13,32 @@ const Navbar = () => {
         </li>
         <li className={styles[["navbar__link"]]}>
           <Link className="primary__link" to="/lorem-exclusive">
-            Lorem Exclusive
+            Shivaz Exclusive
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
           <Link className="primary__link" to="/men">
-            Men
+            Blankets
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
           <Link className="primary__link" to="/women">
-            Women
+            Quilts
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
           <Link className="primary__link" to="/ethnic">
-            Ethnic
+            Pillow Covers
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
           <Link className="primary__link" to="/couture">
-            Couture
+            Comforter Sets
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
           <Link className="primary__link" to="/bridal">
-            Bridal
+            Sale
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>

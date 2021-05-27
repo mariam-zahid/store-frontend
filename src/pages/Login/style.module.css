@@ -14,8 +14,10 @@
 }
 
 .login__sideImage img {
-  width: auto;
+  width: 100%;
   max-width: 30rem;
+  height: auto;
+  background-color: #22262a10;
 }
 
 .welcome__text {

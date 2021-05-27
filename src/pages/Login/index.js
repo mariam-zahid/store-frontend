@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Link, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,10 +10,18 @@ import TextInput from "../../Components/UI/TextInput";
 import Wrapper from "../../Components/UI/Wrapper";
 import { GoogleLogin } from "../../Components/SocialLogins";
 
-import sideImage from "../../assets/images/1.jpg";
+// import sideImage from "../../assets/images/1.jpg";
+
+const lazyDataSrc =
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 3 4"%3E%3C/svg%3E';
 const Login = () => {
+  const [loaded, setLoaded] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
@@ -40,10 +48,17 @@ const Login = () => {
           <div
             className={styles[("login__wrapper-children", "login__sideImage")]}
           >
-            <img src={sideImage} alt="demo img" />
+            <img
+              src={
+                loaded
+                  ? "https://shivaz-store.s3.ap-south-1.amazonaws.com/1.jpg"
+                  : lazyDataSrc
+              }
+              alt="demo img"
+            />
           </div>
           <div className={styles["login__wrapper-children"]}>
-            <h3 className={styles["welcome__text"]}>Welcome to LoremStore</h3>
+            <h3 className={styles["welcome__text"]}>Welcome to Shivaz</h3>
             {error && <h5>{error}</h5>}
             <form onSubmit={loginHandler}>
               <div className={styles["form__group"]}>
