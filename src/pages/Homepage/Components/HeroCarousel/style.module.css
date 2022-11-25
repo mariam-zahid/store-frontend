@@ -1,0 +1,78 @@
+.master {
+    height: 700px;
+    position: relative;
+}
+
+.imageWrapper {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carouselArrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    cursor: pointer;
+    color: white;
+}
+
+.leftArrow {
+    left: 0;
+    margin: 0 0 0 1rem;
+}
+
+.rightArrow {
+    right: 0;
+    margin: 0 1rem 0 0;
+}
+
+.sliderImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    height: 700px;
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.carouselContent {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    /* transform: translate(-50%, -50%); */
+    color: #fff;
+    /* text-align: center; */
+    /* width: 100%; */
+    z-index: 1;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* media query for max width */
+@media (max-width: 500px) {
+    .carouselArrow {
+        display: none;;
+    }
+
+    .carouselContent {
+        left: 0;
+        padding: 1rem;
+    }
+
+    .master {
+        height: 500px;
+    }
+
+    .sliderImg {
+        height: 500px;
+    }
+}

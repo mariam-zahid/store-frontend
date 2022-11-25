@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { logout } from "../../actions";
 
@@ -17,7 +17,7 @@ const LogoutButton = () => {
   };
 
   if (loggedOut) {
-    return <Redirect to="/account/login" push={true} />;
+    return <Navigate to="/account/login" push={true} />;
   }
   return (
     <div className={styles["logout__button"]}>

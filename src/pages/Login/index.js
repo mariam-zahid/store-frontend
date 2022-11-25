@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./style.module.css";
 import { login } from "../../actions";
@@ -28,7 +28,7 @@ const Login = () => {
   const { loading, error } = userLogin;
   const { authenticated } = useSelector((state) => state.authentication);
   if (authenticated === "true") {
-    return <Redirect to="/account" />;
+    return <Navigate to="/account" />;
   }
 
   const loginHandler = (e) => {

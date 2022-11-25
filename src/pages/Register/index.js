@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { register } from "../../actions";
 import styles from "./style.module.css";
@@ -22,7 +22,7 @@ const Register = () => {
   const { loading, error } = userRegister;
   const { authenticated } = useSelector((state) => state.authentication);
   if (authenticated === "true") {
-    return <Redirect to="/account" />;
+    return <Navigate to="/account" />;
   }
 
   const registerHandler = (e) => {

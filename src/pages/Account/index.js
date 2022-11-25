@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./style.module.css";
@@ -11,7 +11,7 @@ const Account = () => {
   const { authenticated } = useSelector((state) => state.authentication);
   // console.log("authentivated value", typeof authenticated);
   const { userInfo } = useSelector((state) => state.userDetails);
-  if (authenticated === "false") return <Redirect to="/account/login" />;
+  if (authenticated === "false") return <Navigate to="/account/login" />;
   const { firstName, lastName, email } = userInfo;
   return (
     <Wrapper>
