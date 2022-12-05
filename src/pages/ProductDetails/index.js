@@ -1,47 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { useParams } from 'react-router-dom'
-import style from './style.module.css'
-import WrapperContainer from '../../Components/UI/WrapperContainer'
-import Slider from 'react-slick'
-import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs'
-import Button from '../../Components/UI/Button'
-
-const productDetails = {
-  isActive: true,
-  currency: 'USD',
-  buyCount: 0,
-  attributes: [
-    {
-      $oid: '632293ef4e6904a360508743',
-    },
-    {
-      $oid: '632294a14e6904a360508745',
-    },
-  ],
-  available: true,
-  name: 'Bed sheet',
-  description: 'This is a bed sheet, made from the finest of the fabrics',
-  category: {
-    $oid: '63226c500e6cdb29802c1c50',
-  },
-  addedBy: {
-    $oid: '63174fc1ac41b717aca698b6',
-  },
-  media: [
-    {
-      _id: '632340cda78afd3b90bfd331',
-      url:
-        'https://d2j6dbq0eux0bg.cloudfront.net/images/10364361/983782642.jpg',
-      type: 'image/jpeg',
-    },
-    {
-      _id: '632340cda78afd3b90bfd332',
-      url:
-        'https://d2j6dbq0eux0bg.cloudfront.net/images/10364361/983782642.jpg',
-      type: 'image/jpeg',
-    },
-  ],
-}
+import React, { useEffect, useState, useRef, useMemo } from "react";
+import { useParams } from "react-router-dom";
+import style from "./style.module.css";
+import WrapperContainer from "../../Components/UI/WrapperContainer";
+import Slider from "react-slick";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import Button from "../../Components/UI/Button";
+import { getSingleProduct } from "../../services/products/productService";
 
 // carousel settings
 const settings = {
@@ -51,16 +15,72 @@ const settings = {
   dots: true,
   // autoplay: true,
   // autoplaySpeed: 4000
-}
+};
 
 const ProductDetails = (props) => {
-  const slickRef = useRef(null)
-  const [product, setProduct] = useState({})
-  const { slug } = useParams()
+  const slickRef = useRef(null);
+  const [product, setProduct] = useState({});
+  const [selectedVariant, setSelectedVariant] = useState({});
+  const [selectedAttributes, setSelectedAttributes] = useState([]);
+  const { slug } = useParams();
   useEffect(() => {
     // fetch product details from api
-    setProduct(productDetails)
-  }, [slug])
+    getSingleProduct({ pathParams: { id: slug } }).then((res) => {
+      setProduct(res.data);
+      setSelectedVariant(res.data.defaultVariant);
+      setSelectedAttributes(res.data.defaultVariant.attributes);
+    });
+  }, [slug]);
+
+  const getAttributeValue = (attributeId) => {
+    const attribute = selectedAttributes.find(
+      (attr) => attr.attribute === attributeId
+    );
+
+    return attribute ? attribute.value : "";
+  };
+
+  useEffect(() => {
+    if (
+      product.variants &&
+      product.variants.length &&
+      selectedAttributes &&
+      selectedAttributes.length
+    ) {
+      const variant = product?.variants?.find((variant) => {
+        return variant?.attributes?.every((attr) => {
+          return (
+            selectedAttributes.find(
+              (selectedAttr) =>
+                selectedAttr.attribute === attr.attribute &&
+                selectedAttr.attributeValue === attr.attributeValue
+            ) !== undefined
+          );
+        });
+      });
+
+      if (variant) {
+        setSelectedVariant(variant);
+      } else {
+        alert("No variant found");
+      }
+    }
+  }, [selectedAttributes, product.variants]);
+
+  const handleAttribute = (e, attribute) => {
+    console.log("handleAttribute", e?.target?.value, attribute);
+    setSelectedAttributes((prev) => {
+      return prev.map((attr) => {
+        if (attr.attribute === attribute._id) {
+          return {
+            ...attr,
+            attributeValue: e?.target?.value,
+          };
+        }
+        return attr;
+      });
+    });
+  };
   return (
     <div>
       <WrapperContainer>
@@ -71,24 +91,24 @@ const ProductDetails = (props) => {
               <i
                 className={`${style.carouselArrow} ${style.leftArrow}`}
                 onClick={() => {
-                  slickRef.current.slickPrev()
+                  slickRef.current.slickPrev();
                 }}
               >
                 <BsArrowLeftCircle
                   style={{
-                    fontSize: '1rem',
+                    fontSize: "1rem",
                   }}
                 />
               </i>
               <i
                 className={`${style.carouselArrow} ${style.rightArrow}`}
                 onClick={() => {
-                  slickRef.current.slickNext()
+                  slickRef.current.slickNext();
                 }}
               >
                 <BsArrowRightCircle
                   style={{
-                    fontSize: '1rem',
+                    fontSize: "1rem",
                   }}
                 />
               </i>
@@ -96,7 +116,11 @@ const ProductDetails = (props) => {
                 {product.media &&
                   product.media.map((media) => (
                     <div key={media._id} className={style.imageWrapper}>
-                      <img className={style.sliderImg} src={media.url} alt={product.name} />
+                      <img
+                        className={style.sliderImg}
+                        src={media.url}
+                        alt={product.name}
+                      />
                     </div>
                   ))}
               </Slider>
@@ -105,15 +129,56 @@ const ProductDetails = (props) => {
           {/* product info section */}
           <div className={style.productInfoWrapper}>
             <h1 className={style.productName}>{product.name}</h1>
+            <div className={style.productPrice}>₹{selectedVariant.price}</div>
             <div className={style.productDescription}>
-              {product.description}
+              {selectedVariant.inventory > 0 ? "In stock" : "Out of Stock!"}
             </div>
-            <div className={style.productPrice}>₹699</div>
-            <div className={style.productDescription}>In stock</div>
+            <div>
+              Attributes List
+              {product.attributes &&
+                product.attributes?.map((item, idx) => (
+                  <div key={idx}>
+                    {/* Field for color */}
+
+                    <div className="my-6">
+                      <div className=" items-center gap-4 text-xl">
+                        <label htmlFor="color">
+                          Choose {item?.attribute?.label}:
+                        </label>
+                        <select
+                          name={item?.attribute?.label}
+                          id={item?.attribute?.label}
+                          value={getAttributeValue(item?.attribute?._id)}
+                          onChange={(e) => {
+                            e.preventDefault();
+                            handleAttribute(e, item?.attribute);
+                          }}
+                          placeholder="Choose color"
+                        >
+                          {item?.attribute?.value?.map((items) => (
+                            <option
+                              key={items}
+                              value={items}
+                              className="text-black"
+                            >
+                              <div className="p-2">{items} </div>
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
             <div className={style.productDescription}>
               Quantity: <input type="number" min="1" max="10" value="1" />
             </div>
             <button className={style.addCartButton}>Add to Bag</button>
+
+            <div
+              className={style.productDescription}
+              dangerouslySetInnerHTML={{ __html: product.description }}
+            />
 
             {/* Product care instructions */}
             <div className={style.productCareWrapper}>
@@ -137,7 +202,7 @@ const ProductDetails = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductDetails
+export default ProductDetails;

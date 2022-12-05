@@ -1,14 +1,14 @@
-import React, { useRef } from 'react'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import style from './style.module.css'
-import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs'
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import style from "./style.module.css";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 
-import heroImg_1 from '../../../../assets/images/heroImg_1.jpg'
-import heroImg_2 from '../../../../assets/images/heroImg_2.jpg'
-import heroImg_3 from '../../../../assets/images/heroImg_3.jpg'
-import heroImg_4 from '../../../../assets/images/heroImg_4.jpg'
+import heroImg_1 from "../../../../assets/images/heroImg_1.jpg";
+import heroImg_2 from "../../../../assets/images/heroImg_2.jpg";
+import heroImg_3 from "../../../../assets/images/heroImg_3.jpg";
+import heroImg_4 from "../../../../assets/images/heroImg_4.jpg";
 
 // slider settings
 const settings = {
@@ -16,23 +16,24 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 4000
+  autoplaySpeed: 4000,
+  arrows: false,
 };
 
 const HeroCarousel = () => {
-  const slickRef = useRef(null)
+  const slickRef = useRef(null);
   return (
     <div className={style.master}>
       {/* left carousel arrow */}
       <i
         className={`${style.carouselArrow} ${style.leftArrow}`}
         onClick={() => {
-          slickRef.current.slickPrev()
+          slickRef.current.slickPrev();
         }}
       >
         <BsArrowLeftCircle
           style={{
-            fontSize: '2rem',
+            fontSize: "2rem",
           }}
         />
       </i>
@@ -40,12 +41,12 @@ const HeroCarousel = () => {
       <i
         className={`${style.carouselArrow} ${style.rightArrow}`}
         onClick={() => {
-          slickRef.current.slickNext()
+          slickRef.current.slickNext();
         }}
       >
         <BsArrowRightCircle
           style={{
-            fontSize: '2rem',
+            fontSize: "2rem",
           }}
         />
       </i>
@@ -104,7 +105,7 @@ const HeroCarousel = () => {
         </div>
       </Slider>
     </div>
-  )
-}
+  );
+};
 
-export default HeroCarousel
+export default HeroCarousel;
