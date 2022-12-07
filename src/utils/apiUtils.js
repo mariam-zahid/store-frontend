@@ -62,9 +62,16 @@ export function callApi({ uriEndPoint, pathParams, query, body, apiHostUrl }) {
       apiHostUrl,
     })
       .then((response) => {
+        if (response?.data?.accessToken) {
+          localStorage.setItem("accessToken", response.data.accessToken);
+        }
         resolve(response.data);
       })
       .catch((err) => {
+        if (err?.response?.status === 401) {
+          // Unauthorized
+          localStorage.setItem("authenticated", "false");
+        }
         console.log(err);
         // if (!err.response) {
         //   reject({ isServerUnreachable: true });

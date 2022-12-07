@@ -1,6 +1,7 @@
-import React from "react";
-import { Navigate, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAtom } from "jotai";
+import { currentUser } from "../../atoms/UserAtoms";
 
 import styles from "./style.module.css";
 
@@ -8,17 +9,20 @@ import Wrapper from "../../Components/UI/Wrapper";
 import LogoutButton from "../../Components/LogoutButton";
 
 const Account = () => {
-  const { authenticated } = useSelector((state) => state.authentication);
-  // console.log("authentivated value", typeof authenticated);
-  const { userInfo } = useSelector((state) => state.userDetails);
-  if (authenticated === "false") return <Navigate to="/account/login" />;
-  const { firstName, lastName, email } = userInfo;
+  const [userDetails] = useAtom(currentUser);
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log("userDetails: ", !!userDetails?._id, userDetails);
+    if (!userDetails?._id) {
+      navigate("/account/login");
+    }
+  }, [userDetails._id]);
   return (
     <Wrapper>
       <h2>My Account</h2>
-      Hello, {firstName} {lastName}
+      Hello, {userDetails?.name}
       <h4>Personal Info</h4>
-      <div>Email: {email}</div>
+      <div>Email: {userDetails?.email}</div>
       <LogoutButton />
     </Wrapper>
   );

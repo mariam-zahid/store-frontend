@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAtom } from 'jotai'
+import { useAtom } from "jotai";
 import styles from "./style.module.css";
 
 import Container from "../UI/Container";
@@ -13,10 +13,12 @@ import { ReactComponent as ShoppingCartIcon } from "../../assets/icons/shopping-
 import { mobileNavVisible } from "../../atoms/UIAtoms";
 
 const HamburgerMenu = () => {
-  const [isOpen, setIsOpen] = useAtom(mobileNavVisible)
+  const [isOpen, setIsOpen] = useAtom(mobileNavVisible);
   return (
     <div
-      className={`${styles['menu-toggle']} ${styles['mobile-menu']} ${isOpen ? styles['is-active'] : ""}`}
+      className={`${styles["menu-toggle"]} ${styles["mobile-menu"]} ${
+        isOpen ? styles["is-active"] : ""
+      }`}
       // id="mobile-menu"
       onClick={() => setIsOpen(!isOpen)}
     >
@@ -32,7 +34,7 @@ const Header = () => {
     <>
       <Topper />
       <header className={styles.headerContainer}>
-        <Container style={{position: 'sticky', top: 0}}>
+        <Container style={{ position: "sticky", top: 0 }}>
           <div className={styles.searchBar}>
             <SearchBar />
           </div>
@@ -42,13 +44,13 @@ const Header = () => {
           </Link>
 
           <div className={styles.links}>
-            <Link to="/" className={styles.link}>
+            <Link to="/wishlist" className={styles.link}>
               <HeartIcon />
             </Link>
             <Link to="/account" className={styles.link}>
               <UserIcon />
             </Link>
-            <Link to="/" className={styles.link}>
+            <Link to="/cart" className={styles.link}>
               <ShoppingCartIcon />
             </Link>
           </div>

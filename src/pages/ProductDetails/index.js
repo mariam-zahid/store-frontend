@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import style from "./style.module.css";
 import WrapperContainer from "../../Components/UI/WrapperContainer";
 import Slider from "react-slick";
+import { ToastContainer, toast } from "react-toastify";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import Button from "../../Components/UI/Button";
-import { getSingleProduct } from "../../services/products/productService";
+import { getSingleProduct } from "../../services/ProductService";
+import { addToCart } from "../../services/CartServices";
 
 // carousel settings
 const settings = {
@@ -22,6 +24,7 @@ const ProductDetails = (props) => {
   const [product, setProduct] = useState({});
   const [selectedVariant, setSelectedVariant] = useState({});
   const [selectedAttributes, setSelectedAttributes] = useState([]);
+  const [addToCartLoading, setAddToCartLoading] = useState(false);
   const { slug } = useParams();
   useEffect(() => {
     // fetch product details from api
@@ -173,7 +176,32 @@ const ProductDetails = (props) => {
             <div className={style.productDescription}>
               Quantity: <input type="number" min="1" max="10" value="1" />
             </div>
-            <button className={style.addCartButton}>Add to Bag</button>
+            <button
+              onClick={() => {
+                setAddToCartLoading(true);
+                addToCart({
+                  body: { variantId: selectedVariant._id, quantity: 1 },
+                })
+                  .then((res) => {
+                    setAddToCartLoading(false);
+
+                    toast.success("Success Notification !", {
+                      position: toast.POSITION.TOP_RIGHT,
+                    });
+                    // props.history.push("/cart");
+                  })
+                  .catch((err) => {
+                    console.log("err while adding to cart: ", err);
+                    toast.error(err?.response?.message, {
+                      position: toast.POSITION.TOP_RIGHT,
+                    });
+                    setAddToCartLoading(false);
+                  });
+              }}
+              className={style.addCartButton}
+            >
+              Add to Cart
+            </button>
 
             <div
               className={style.productDescription}
@@ -201,6 +229,7 @@ const ProductDetails = (props) => {
           <Button>Contact Us</Button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

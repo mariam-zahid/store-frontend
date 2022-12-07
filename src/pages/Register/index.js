@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-import { register } from "../../actions";
 import styles from "./style.module.css";
 
 import Loader from "../../Components/UI/Loader";
@@ -17,27 +15,27 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const dispatch = useDispatch();
-  const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error } = userRegister;
-  const { authenticated } = useSelector((state) => state.authentication);
-  if (authenticated === "true") {
-    return <Navigate to="/account" />;
-  }
+  // const dispatch = useDispatch();
+  // const userRegister = useSelector((state) => state.userRegister);
+  // const { loading, error } = userRegister;
+  // const { authenticated } = useSelector((state) => state.authentication);
+  // if (authenticated === "true") {
+  //   return <Navigate to="/account" />;
+  // }
 
   const registerHandler = (e) => {
     e.preventDefault();
-    dispatch(register({ firstName, lastName, email, password }));
+    // dispatch(register({ firstName, lastName, email, password }));
   };
   return (
     <Wrapper>
       <div className={styles["register__wrapper"]}>
         <>
-          {loading &&
+          {/* {loading &&
             ReactDOM.createPortal(
               <Loader />,
               document.querySelector("#loader-root")
-            )}
+            )} */}
           <div
             className={
               styles[("register__wrapper-children", "register__sideImage")]
@@ -47,7 +45,7 @@ const Register = () => {
           </div>
           <div className={styles["register__wrapper-children"]}>
             <h3 className={styles["welcome__text"]}>Create An Account</h3>
-            {error && <h5>{error}</h5>}
+            {/* {error && <h5>{error}</h5>} */}
             <form onSubmit={registerHandler}>
               <div className={styles[""]}>
                 <TextInput

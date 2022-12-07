@@ -37,12 +37,12 @@ const Navbar = () => {
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
-          <Link className="primary__link" to="/bridal">
-            Sale
+          <Link className="primary__link" to="/shop">
+            Shop
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
-          <Link className="primary__link" to="/latest">
+          <Link className="primary__link" to="/shop">
             Latest
           </Link>
         </li>

@@ -1,5 +1,5 @@
-import { callApi } from "../../utils/apiUtils";
-import productsEndpoints from "../../utils/endpoints/products";
+import { callApi } from "../utils/apiUtils";
+import productsEndpoints from "../utils/endpoints/products.endpoints";
 
 export const getProducts = ({ query }) => {
   return callApi({

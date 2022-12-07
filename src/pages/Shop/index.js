@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../Components/UI/Button";
 import WrapperContainer from "../../Components/UI/WrapperContainer";
-import { getProducts } from "../../services/products/productService";
+import { getProducts } from "../../services/ProductService";
 import style from "./styles.module.css";
 
 const shopProducts = [

@@ -1,45 +1,61 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { Link, Navigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useAtom } from "jotai";
 import styles from "./style.module.css";
-import { login } from "../../actions";
+import { currentUser } from "../../atoms/UserAtoms";
 
 import Loader from "../../Components/UI/Loader";
 import TextInput from "../../Components/UI/TextInput";
 import Wrapper from "../../Components/UI/Wrapper";
 import { GoogleLogin } from "../../Components/SocialLogins";
-
-// import sideImage from "../../assets/images/1.jpg";
+import { userLogin } from "../../services/AuthServices";
 
 const lazyDataSrc =
   'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 3 4"%3E%3C/svg%3E';
 const Login = () => {
+  const [userDetails, setUserDetails] = useAtom(currentUser);
+  const [loginLoading, setLoginLoading] = useState(false);
+  const [loginError, setLoginError] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoaded(true);
   }, []);
 
-  const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
-  const { loading, error } = userLogin;
-  const { authenticated } = useSelector((state) => state.authentication);
-  if (authenticated === "true") {
-    return <Navigate to="/account" />;
-  }
+  useEffect(() => {
+    console.log("userDetails: ", !!userDetails?._id, userDetails);
+    if (!!userDetails?._id) {
+      navigate("/account");
+    }
+  }, [userDetails._id]);
 
   const loginHandler = (e) => {
     e.preventDefault();
-    dispatch(login({ email, password }));
+    setLoginLoading(true);
+    userLogin({
+      body: { email, password },
+    })
+      .then((response) => {
+        setLoginLoading(false);
+        setUserDetails(response?.user);
+        setLoginError("");
+        navigate("/account");
+      })
+      .catch((error) => {
+        setLoginLoading(false);
+        setLoginError(error?.data?.error?.message || "Something went wrong");
+      });
   };
 
   return (
     <Wrapper>
       <div className={styles["login__wrapper"]}>
-        {loading &&
+        {loginLoading &&
           ReactDOM.createPortal(
             <Loader />,
             document.querySelector("#loader-root")
@@ -59,7 +75,7 @@ const Login = () => {
           </div>
           <div className={styles["login__wrapper-children"]}>
             <h3 className={styles["welcome__text"]}>Welcome to Shivaz</h3>
-            {error && <h5>{error}</h5>}
+            {loginError && <h5>{loginError}</h5>}
             <form onSubmit={loginHandler}>
               <div className={styles["form__group"]}>
                 <TextInput

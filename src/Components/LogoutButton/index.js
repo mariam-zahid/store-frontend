@@ -1,18 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
-
-import { logout } from "../../actions";
 
 import styles from "./style.module.css";
 import Button from "../UI/Button";
 
 const LogoutButton = () => {
   const [loggedOut, setLoggedOut] = useState(false);
-  const dispatch = useDispatch();
 
   const logoutHandler = () => {
-    dispatch(logout());
+    // dispatch(logout());
     setLoggedOut(true);
   };
 
