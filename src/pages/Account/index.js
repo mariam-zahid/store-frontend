@@ -5,26 +5,30 @@ import { currentUser } from "../../atoms/UserAtoms";
 
 import styles from "./style.module.css";
 
-import Wrapper from "../../Components/UI/Wrapper";
-import LogoutButton from "../../Components/LogoutButton";
+// import Wrapper from "../../Components/UI/Wrapper";
+// import LogoutButton from "../../Components/LogoutButton";
+import WrapperContainer from "../../Components/UI/WrapperContainer";
+import Addresses from "./components/Addresses";
 
 const Account = () => {
   const [userDetails] = useAtom(currentUser);
   const navigate = useNavigate();
   useEffect(() => {
-    console.log("userDetails: ", !!userDetails?._id, userDetails);
+    // console.log("userDetails: ", !!userDetails?._id, userDetails);
     if (!userDetails?._id) {
       navigate("/account/login");
     }
   }, [userDetails._id]);
   return (
-    <Wrapper>
+    <WrapperContainer>
       <h2>My Account</h2>
       Hello, {userDetails?.name}
       <h4>Personal Info</h4>
       <div>Email: {userDetails?.email}</div>
-      <LogoutButton />
-    </Wrapper>
+      {/* show addresses */}
+      <Addresses />
+      {/* <LogoutButton /> */}
+    </WrapperContainer>
   );
 };
 

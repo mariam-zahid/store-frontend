@@ -30,6 +30,7 @@ const HamburgerMenu = () => {
 };
 
 const Header = () => {
+  const [cartItems, setCartItems] = useState([]);
   return (
     <>
       <Topper />

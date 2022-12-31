@@ -113,7 +113,7 @@
 }
 
 @media (hover: hover) {
-  .addCartButton:hover {
+  .checkoutButton:hover {
     background-color: var(--primary-light);
     color: #fff;
   }

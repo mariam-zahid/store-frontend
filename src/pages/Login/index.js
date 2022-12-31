@@ -28,7 +28,6 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    console.log("userDetails: ", !!userDetails?._id, userDetails);
     if (!!userDetails?._id) {
       navigate("/account");
     }

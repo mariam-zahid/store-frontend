@@ -15,6 +15,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
 import MobileNav from "./Components/MobileNav";
 import { useAtom } from "jotai";
@@ -73,11 +74,12 @@ const App = () => {
             <Route exact path="/category" element={<Category />} />
             <Route exact path="/shop" element={<Shop />} />
             <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/checkout" element={<Checkout />} />
             <Route exact path="/wishlist" element={<Shop />} />
             <Route exact path="/account" element={<Account />} />
             <Route exact path="/shop/:slug" element={<ProductDetails />} />
-            <Route path="/account/login" element={<Login />} />
-            <Route path="/account/register" element={<Register />} />
+            <Route exact path="/account/login" element={<Login />} />
+            <Route exact path="/account/register" element={<Register />} />
             <Route path="*" element={<Homepage />} />
           </Routes>
         </BasicLayout>

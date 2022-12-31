@@ -1,0 +1,148 @@
+.tableWrapper {
+  overflow: auto;
+}
+
+.billingHeading {
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.colHalf {
+  padding: 0 1rem;
+  position: relative;
+  /* padding-right: 15px;
+    padding-left: 15px; */
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.colFull {
+  padding: 0 1rem;
+  position: relative;
+  /* padding-right: 15px;
+    padding-left: 15px; */
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.formGroup {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.inputLabel {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.formControl {
+  font-weight: 300;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 3.5rem;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  box-sizing: border-box;
+  line-height: 1.5;
+  outline: 0;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.formControl:focus,
+.formControl:active {
+  border-color: #dbcc8f !important;
+}
+
+.summaryWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.summary {
+  width: 40%;
+}
+
+.cartTotal {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* padding: 20px; */
+  margin-bottom: 1rem;
+}
+
+.totalRow {
+  display: flex;
+  width: 100%;
+}
+
+.totalRow span {
+  display: block;
+  width: 50%;
+}
+
+.checkoutButton {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  /* border: 1.5px solid var(--primary); */
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0px 24px 36px -11px rgb(0 0 0 / 9%);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 2px;
+  user-select: none;
+  text-decoration: none;
+  transition: 0.3s ease all;
+}
+
+@media (hover: hover) {
+  .checkoutButton:hover {
+    background-color: var(--primary-light);
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .colHalf {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .colHalf {
+    width: 100%;
+  }
+  .summary {
+    width: 100%;
+  }
+}

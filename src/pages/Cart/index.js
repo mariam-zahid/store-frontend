@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import style from "./style.module.css";
-import WrapperContainer from "../../Components/UI/WrapperContainer";
-
-import { getCart, updateCartItem } from "../../services/CartServices";
+import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
-import { currentUser as userDetails } from "../../atoms/UserAtoms";
 import { debounce } from "lodash";
-import Button from "../../Components/UI/Button";
+import style from "./style.module.css";
+
+import WrapperContainer from "../../Components/UI/WrapperContainer";
+import { getCart, updateCartItem } from "../../services/CartServices";
+import { currentUser as userDetails } from "../../atoms/UserAtoms";
 
 const formatPrice = (price) => {
   return price.toLocaleString("en-US", {
@@ -19,6 +19,7 @@ const UserCart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [currentUser] = useAtom(userDetails);
   const [total, setTotal] = useState(0);
+  const navigate = useNavigate();
   useEffect(() => {
     if (!!currentUser._id) {
       getCart().then((res) => {
@@ -152,7 +153,7 @@ const UserCart = () => {
                 </p>
               </div>
             </div>
-            <button className={style.checkoutButton}>
+            <button onClick={() => {navigate("/checkout");}} className={style.checkoutButton}>
               Proceed to Checkout
             </button>
           </div>

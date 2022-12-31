@@ -2,27 +2,32 @@ import { useAtom } from "jotai";
 import React from "react";
 import { Link } from "react-router-dom";
 import { mobileNavVisible } from "../../atoms/UIAtoms";
+import { currentUser as userAtom } from "../../atoms/UserAtoms";
 import styles from "./style.module.css";
 
 const MobileNav = ({ innerRef }) => {
   const [isOpen, setIsOpen] = useAtom(mobileNavVisible);
+  const [currentUser] = useAtom(userAtom);
+  const onNavigationClick = () => {
+    setIsOpen(false);
+  }
   return (
     <nav ref={innerRef} className={styles["navbar"]}>
       <ul className={`${styles["nav"]} ${isOpen && styles["mobile-nav"]}`}>
-        <li className={styles["nav-item"]}>
-          <a href="/">Home</a>
+        <li onClick={onNavigationClick} className={styles["nav-item"]}>
+          <Link to="/">Home</Link>
         </li>
-        <li className={styles["nav-item"]}>
-          <a href="/shop">Shop</a>
+        <li onClick={onNavigationClick} className={styles["nav-item"]}>
+          <Link to="/shop">Shop</Link>
         </li>
-        <li className={styles["nav-item"]}>
-          <a href="/cart">Cart</a>
+        <li onClick={onNavigationClick} className={styles["nav-item"]}>
+          <Link to="/cart">Cart</Link>
         </li>
-        <li className={styles["nav-item"]}>
-          <a href="/account/login">Login</a>
+        <li onClick={onNavigationClick} className={styles["nav-item"]}>
+          {currentUser._id ? <Link to="/account">Account</Link> : <Link to="/account/login">Login</Link>}
         </li>
-        <li className={styles["nav-item"]}>
-          <a href="/contact-us">Contact Us</a>
+        <li onClick={onNavigationClick} className={styles["nav-item"]}>
+          <Link to="/contact-us">Contact Us</Link>
         </li>
       </ul>
     </nav>

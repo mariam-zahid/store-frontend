@@ -7,7 +7,7 @@ export const hostname = () => {
   let hostUrl = "";
 
   // hostUrl = "https://api.shivazhandloom.com/api";
-  hostUrl = "http://localhost:5000/api";
+  hostUrl = "http://localhost:5001/api";
   return hostUrl;
 };
 
