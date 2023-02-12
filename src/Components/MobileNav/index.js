@@ -10,10 +10,10 @@ const MobileNav = ({ innerRef }) => {
   const [currentUser] = useAtom(userAtom);
   const onNavigationClick = () => {
     setIsOpen(false);
-  }
+  };
   return (
     <nav ref={innerRef} className={styles["navbar"]}>
-      <ul className={`${styles["nav"]} ${isOpen && styles["mobile-nav"]}`}>
+      <ul className={`${isOpen && styles["mobile-nav"]}`}>
         <li onClick={onNavigationClick} className={styles["nav-item"]}>
           <Link to="/">Home</Link>
         </li>
@@ -24,7 +24,11 @@ const MobileNav = ({ innerRef }) => {
           <Link to="/cart">Cart</Link>
         </li>
         <li onClick={onNavigationClick} className={styles["nav-item"]}>
-          {currentUser._id ? <Link to="/account">Account</Link> : <Link to="/account/login">Login</Link>}
+          {currentUser._id ? (
+            <Link to="/account">Account</Link>
+          ) : (
+            <Link to="/account/login">Login</Link>
+          )}
         </li>
         <li onClick={onNavigationClick} className={styles["nav-item"]}>
           <Link to="/contact-us">Contact Us</Link>

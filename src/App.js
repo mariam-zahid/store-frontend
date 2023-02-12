@@ -22,6 +22,7 @@ import { useAtom } from "jotai";
 import { mobileNavVisible } from "./atoms/UIAtoms";
 import { currentUser } from "./atoms/UserAtoms";
 import { getMe } from "./services/UserServices";
+import Wishlist from "./pages/Wishlist";
 
 const BasicLayout = ({ children }) => {
   const [isOpen] = useAtom(mobileNavVisible);
@@ -59,7 +60,7 @@ const BasicLayout = ({ children }) => {
         </CSSTransition>
       </div>
       <main style={{ flexGrow: 1, padding: "0" }}>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
@@ -75,7 +76,7 @@ const App = () => {
             <Route exact path="/shop" element={<Shop />} />
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/checkout" element={<Checkout />} />
-            <Route exact path="/wishlist" element={<Shop />} />
+            <Route exact path="/wishlist" element={<Wishlist />} />
             <Route exact path="/account" element={<Account />} />
             <Route exact path="/shop/:slug" element={<ProductDetails />} />
             <Route exact path="/account/login" element={<Login />} />

@@ -4,10 +4,19 @@ import style from "./style.module.css";
 import WrapperContainer from "../../Components/UI/WrapperContainer";
 import Slider from "react-slick";
 import { ToastContainer, toast } from "react-toastify";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import {
+  BsArrowLeftCircle,
+  BsArrowRightCircle,
+  BsHeart,
+  BsHeartFill,
+} from "react-icons/bs";
 import Button from "../../Components/UI/Button";
 import { getSingleProduct } from "../../services/ProductService";
 import { addToCart } from "../../services/CartServices";
+import {
+  addToWishlist,
+  deleteFromWishlist,
+} from "../../services/WishlistServices";
 
 // carousel settings
 const settings = {
@@ -25,7 +34,12 @@ const ProductDetails = (props) => {
   const [selectedVariant, setSelectedVariant] = useState({});
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [addToCartLoading, setAddToCartLoading] = useState(false);
+  const [wishlistLoading, setWishlistLoading] = useState(false);
   const { slug } = useParams();
+
+  const mountedStyle = { animation: `${style.inAnimation} 500ms ease-in` };
+  const unMountedStyle = { animation: `${style.outAnimation} 510ms ease-in` };
+
   useEffect(() => {
     // fetch product details from api
     getSingleProduct({ pathParams: { id: slug } }).then((res) => {
@@ -176,32 +190,77 @@ const ProductDetails = (props) => {
             <div className={style.productDescription}>
               Quantity: <input type="number" min="1" max="10" value="1" />
             </div>
-            <button
-              onClick={() => {
-                setAddToCartLoading(true);
-                addToCart({
-                  body: { variantId: selectedVariant._id, quantity: 1 },
-                })
-                  .then((res) => {
-                    setAddToCartLoading(false);
-
-                    toast.success("Success Notification !", {
-                      position: toast.POSITION.TOP_RIGHT,
-                    });
-                    // props.history.push("/cart");
+            <div style={{ display: "flex" }}>
+              <button
+                onClick={() => {
+                  setAddToCartLoading(true);
+                  addToCart({
+                    body: { variantId: selectedVariant._id, quantity: 1 },
                   })
-                  .catch((err) => {
-                    console.log("err while adding to cart: ", err);
-                    toast.error(err?.response?.message, {
-                      position: toast.POSITION.TOP_RIGHT,
+                    .then((res) => {
+                      setAddToCartLoading(false);
+
+                      toast.success("Success Notification !", {
+                        position: toast.POSITION.TOP_RIGHT,
+                      });
+                      // props.history.push("/cart");
+                    })
+                    .catch((err) => {
+                      console.log("err while adding to cart: ", err);
+                      toast.error(err?.response?.message, {
+                        position: toast.POSITION.TOP_RIGHT,
+                      });
+                      setAddToCartLoading(false);
                     });
-                    setAddToCartLoading(false);
-                  });
-              }}
-              className={style.addCartButton}
-            >
-              Add to Cart
-            </button>
+                }}
+                className={style.addCartButton}
+              >
+                Add to Cart
+              </button>
+              <button
+                disabled={wishlistLoading}
+                onClick={() => {
+                  setWishlistLoading(true);
+                  if (product.isWishlisted) {
+                    deleteFromWishlist({
+                      pathParams: { productId: product._id },
+                    })
+                      .then(() => {
+                        setProduct((prev) => ({
+                          ...prev,
+                          isWishlisted: false,
+                        }));
+                      })
+                      .finally(() => {
+                        setWishlistLoading(false);
+                      });
+                  } else {
+                    addToWishlist({
+                      pathParams: { productId: product._id },
+                    })
+                      .then(() => {
+                        setProduct((prev) => ({
+                          ...prev,
+                          isWishlisted: true,
+                        }));
+                      })
+                      .finally(() => {
+                        setWishlistLoading(false);
+                      });
+                  }
+                }}
+                className={style.wishlistButton}
+              >
+                {product.isWishlisted ? (
+                  <BsHeartFill
+                    style={product.isWishlisted ? mountedStyle : unMountedStyle}
+                    className={style.wishlistIconFilled}
+                  />
+                ) : (
+                  <BsHeart className={style.wishlistIconFilled} />
+                )}
+              </button>
+            </div>
 
             <div
               className={style.productDescription}

@@ -1,5 +1,6 @@
 .footer__wrapper {
   border-top: 1px solid #f1f1f1;
+  margin: 3rem 0;
 }
 
 .main__footer {
@@ -14,6 +15,7 @@
 .main__footer-links {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 60%;
 }
 
@@ -30,13 +32,15 @@
 }
 
 .main__footer-link__column {
-  width: 100%;
+  /* width: 100%; */
+  min-width: 160px;
+  margin-bottom: 2rem;
 }
 
 .link__column-link {
   display: block;
   font-size: 0.9rem;
-  padding: 0.25rem 0;
+  margin: 0.25rem 0;
 }
 
 .link__column-link:hover {

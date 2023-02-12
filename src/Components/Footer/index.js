@@ -12,6 +12,7 @@ const Footer = () => {
     <footer className={styles["footer__wrapper"]}>
       <div className={styles["main__footer"]}>
         <div className={styles["main__footer-links"]}>
+          {/* Shop the site section */}
           <div className={styles["main__footer-link__column"]}>
             <div className={styles["link__column-header"]}>Shop the site</div>
             <div
@@ -43,6 +44,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+          {/* Discover section */}
           <div className={styles["main__footer-link__column"]}>
             <div className={styles["link__column-header"]}>Discover</div>
             <div
@@ -74,6 +76,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+          {/* Customer service section */}
           <div className={styles["main__footer-link__column"]}>
             <div className={styles["link__column-header"]}>
               Customer Service
@@ -119,7 +122,8 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className={styles["main__footer-link__column"]}>
+          {/* My account section */}
+          {/* <div className={styles["main__footer-link__column"]}>
             <div className={styles["link__column-header"]}>My account</div>
             <div
               className={`${styles["link__column-data"]} double-line-height`}
@@ -143,10 +147,23 @@ const Footer = () => {
                 My Wishlist
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={styles["main__footer-misc"]}>
-          <div className={styles["misc__column-header"]}>Connect With Us</div>
+          <div className={styles["misc__column-header"]}>Sign Up and Save</div>
+          <p style={{ fontSize: "0.9rem" }}>
+            Sign up now and be the first one to know about exclusive offers,
+            latest trends and customized products!
+            <span style={{ textDecoration: "underline" }}>
+              <Link
+                to="/"
+                className={`primary__link ${styles["link__column-link"]}`}
+              >
+                Login
+              </Link>
+            </span>
+          </p>
+          <div className={styles["link__column-header"]}>Connect With Us</div>
           <div className={styles["misc__column-social__logins"]}>
             <a
               href="/"
@@ -173,7 +190,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles["footer__copyright"]}>
-        Copyright &copy;{currentYear} | All rights reserved
+        &copy; {currentYear} SHIVAZ | All rights reserved
       </div>
     </footer>
   );

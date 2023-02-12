@@ -17,9 +17,15 @@
   /* transition: transform 0.3s ease-in-out; */
 }
 
+.nav-item {
+  margin: 1rem 0;
+}
+
 .nav-item a {
+  display: inline-block;
   color: #000;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  width: 100%;
   font-weight: 400;
   text-decoration: none;
   transition: color 0.3s ease-out;
@@ -30,8 +36,8 @@
 }
 
 .mobile-nav {
-    transform: translate(0%)!important;
-    /* transition: transform 0.3s ease-in-out; */
+  transform: translate(0%) !important;
+  /* transition: transform 0.3s ease-in-out; */
 }
 
 @media screen and (min-width: 768px) {

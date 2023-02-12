@@ -86,3 +86,16 @@
   color: var(--primary);
   text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+  .login__wrapper {
+    display: block;
+  }
+  .login__wrapper-children {
+    width: 100%;
+    margin: 0;
+  }
+  .login__sideImage img {
+    display: none;
+  }
+}

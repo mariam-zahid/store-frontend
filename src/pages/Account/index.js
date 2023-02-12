@@ -9,11 +9,13 @@ import styles from "./style.module.css";
 // import LogoutButton from "../../Components/LogoutButton";
 import WrapperContainer from "../../Components/UI/WrapperContainer";
 import Addresses from "./components/Addresses";
+import { getWishlist } from "../../services/WishlistServices";
 
 const Account = () => {
   const [userDetails] = useAtom(currentUser);
   const navigate = useNavigate();
   useEffect(() => {
+    getWishlist();
     // console.log("userDetails: ", !!userDetails?._id, userDetails);
     if (!userDetails?._id) {
       navigate("/account/login");

@@ -81,6 +81,7 @@
   cursor: pointer;
   padding: 0.5rem 1rem;
   width: 100%;
+  margin-right: 0.5rem;
   /* border: 1.5px solid var(--primary); */
   background-color: var(--primary);
   color: #fff;
@@ -92,6 +93,28 @@
   user-select: none;
   text-decoration: none;
   transition: 0.3s ease all;
+}
+
+.wishlistButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: var(--primary);
+  box-shadow: 0px 24px 36px -11px rgb(0 0 0 / 9%);
+  text-align: center;
+  font-size: 1.65rem;
+  border-radius: 2px;
+  user-select: none;
+  text-decoration: none;
+  transition: 0.3s ease all;
+}
+
+.wishlistIconFilled {
+  color: tomato;
+  transition: 0.2s ease all;
 }
 
 @media (hover: hover) {
@@ -108,15 +131,15 @@
 }
 
 .contactUsWrapper {
-    background-color: #F7F8FA;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem 1rem 2rem 1rem;
+  background-color: #f7f8fa;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 1rem 2rem 1rem;
 }
 
 .innerContainer {
-    max-width: 650px;
+  max-width: 650px;
 }
 
 /* media query for min 768 width */
@@ -157,12 +180,35 @@
 
 /* media query for min 768 width */
 @media (min-width: 1080px) {
-
   .carouselWrapper {
     height: 500px;
   }
 
   .sliderImg {
     height: 500px;
+  }
+}
+
+@keyframes inAnimation {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes outAnimation {
+  20% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
   }
 }

@@ -56,10 +56,11 @@ const HeroCarousel = () => {
           <div className={style.carouselContent}>
             <h1>WELCOME TO SHIVAZ HANDLOOM</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quod, voluptate, quia, voluptates quas voluptatibus quibusdam
-              voluptatum quae quidem natus quos. Quisquam, quae. Quisquam
-              voluptatum quae quidem natus quos. Quisquam, quae.
+              Built with the highest quality materials, our linens are sure to
+              impress your guests. With state-of-the-art technology, we are able
+              to produce the highest quality linens in the industry. With our
+              dedicated customer service team, you can rest assured that you are
+              in good hands.
             </p>
           </div>
           <img className={style.sliderImg} src={heroImg_1} />
@@ -67,12 +68,12 @@ const HeroCarousel = () => {
         <div className={style.imageWrapper}>
           <div className={style.overlay}></div>
           <div className={style.carouselContent}>
-            <h1>WELCOME TO SHIVAZ HANDLOOM</h1>
+            <h1>Elevate Your Guest Experience with Our Luxury Linens</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quod, voluptate, quia, voluptates quas voluptatibus quibusdam
-              voluptatum quae quidem natus quos. Quisquam, quae. Quisquam
-              voluptatum quae quidem natus quos. Quisquam, quae.
+              Transform your hotel rooms into a haven of comfort and style with
+              our premium linens. Convert your guests' stay into a memorable one
+              with our elegant and sophisticated linens. Indulge your guests in
+              the epitome of comfort and luxury with our top-of-the-line linens.
             </p>
           </div>
           <img className={style.sliderImg} src={heroImg_2} />
@@ -80,12 +81,13 @@ const HeroCarousel = () => {
         <div className={style.imageWrapper}>
           <div className={style.overlay}></div>
           <div className={style.carouselContent}>
-            <h1>WELCOME TO SHIVAZ HANDLOOM</h1>
+            <h1>Eco-Friendly Linens for a Sustainable Future</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quod, voluptate, quia, voluptates quas voluptatibus quibusdam
-              voluptatum quae quidem natus quos. Quisquam, quae. Quisquam
-              voluptatum quae quidem natus quos. Quisquam, quae.
+              We are committed to providing eco-friendly solutions that protect
+              our planet and preserve its natural resources. Our linens are made
+              from sustainable materials, helping to reduce waste and conserve
+              resources. Take a step towards a greener future with our
+              environmentally friendly linens.
             </p>
           </div>
           <img className={style.sliderImg} src={heroImg_3} />
@@ -93,12 +95,13 @@ const HeroCarousel = () => {
         <div className={style.imageWrapper}>
           <div className={style.overlay}></div>
           <div className={style.carouselContent}>
-            <h1>WELCOME TO SHIVAZ HANDLOOM</h1>
+            <h1>Unmatched Comfort and Softness</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quod, voluptate, quia, voluptates quas voluptatibus quibusdam
-              voluptatum quae quidem natus quos. Quisquam, quae. Quisquam
-              voluptatum quae quidem natus quos. Quisquam, quae.
+              Our linens are crafted to provide the ultimate in comfort and
+              softness, night after night. Experience the comfort and softness
+              of our linens for yourself and discover why they are so sought
+              after. Say goodbye to scratchy, uncomfortable linens and hello to
+              a good night's sleep with our premium linens.
             </p>
           </div>
           <img className={style.sliderImg} src={heroImg_4} />
