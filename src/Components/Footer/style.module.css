@@ -68,3 +68,16 @@
   font-size: 0.8rem;
   letter-spacing: 0.7px;
 }
+
+@media screen and (max-width: 650px) {
+  .main__footer {
+    display: block;
+  }
+  .main__footer-links {
+    width: 100%;
+  }
+
+  .main__footer-misc {
+    width: 100%;
+  }
+}

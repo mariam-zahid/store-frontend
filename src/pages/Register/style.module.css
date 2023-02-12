@@ -29,3 +29,13 @@
   width: 50%;
   margin: 10px auto;
 }
+
+.new__user {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.new__user a {
+  color: var(--primary);
+  text-decoration: underline;
+}

@@ -4,13 +4,13 @@ import { useAtom } from "jotai";
 import styles from "./style.module.css";
 
 import Container from "../UI/Container";
-import Topper from "./Components/Topper";
 import SearchBar from "./Components/SearchBar";
 
 import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 import { ReactComponent as ShoppingCartIcon } from "../../assets/icons/shopping-cart.svg";
 import { mobileNavVisible } from "../../atoms/UIAtoms";
+import logo from "../../assets/images/Primary_logo_green.png";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useAtom(mobileNavVisible);
@@ -33,15 +33,23 @@ const Header = () => {
   const [cartItems, setCartItems] = useState([]);
   return (
     <>
-      <Topper />
+      {/* <div> */}
       <header className={styles.headerContainer}>
         <Container style={{ position: "sticky", top: 0 }}>
           <div className={styles.searchBar}>
             <SearchBar />
           </div>
 
-          <Link to="/" className={` ${styles.logo}`}>
-            SHIVAZ HANDLOOM
+          <Link style={{ height: "70px" }} to="/" className={` ${styles.logo}`}>
+            <img
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+              src={logo}
+              alt="Primary Logo"
+            />
           </Link>
 
           <div className={styles.links}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 
 import styles from "./style.module.css";
@@ -97,6 +97,12 @@ const Register = () => {
                 </button>
               </div>
             </form>
+            <div className={styles["new__user"]}>
+              Existing User?{" "}
+              <Link className="primary__link" to="/account/login">
+                Login here
+              </Link>
+            </div>
           </div>
         </>
       </div>

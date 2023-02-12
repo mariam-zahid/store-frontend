@@ -93,7 +93,7 @@
   }
   .login__wrapper-children {
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
   }
   .login__sideImage img {
     display: none;

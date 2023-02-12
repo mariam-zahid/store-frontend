@@ -33,6 +33,7 @@ const ProductDetails = (props) => {
   const [product, setProduct] = useState({});
   const [selectedVariant, setSelectedVariant] = useState({});
   const [selectedAttributes, setSelectedAttributes] = useState([]);
+  // const [attributeList, setAttributeList] = useState([]);
   const [addToCartLoading, setAddToCartLoading] = useState(false);
   const [wishlistLoading, setWishlistLoading] = useState(false);
   const { slug } = useParams();
@@ -46,6 +47,16 @@ const ProductDetails = (props) => {
       setProduct(res.data);
       setSelectedVariant(res.data.defaultVariant);
       setSelectedAttributes(res.data.defaultVariant.attributes);
+      // const attributeList = [];
+      // for(let i=0;i<res.data.attributes.length;i++){
+      //   attributeList.push(res.data.attributes[i].attribute.value[0])
+      // }
+      // res.data.attributes.map((item) => {
+      //   return {
+      //     attribute: item.attribute._id,
+      //     attributeValue: item.attribute.value[0],
+      //   };
+      // });
     });
   }, [slug]);
 

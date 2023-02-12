@@ -23,6 +23,7 @@ import { mobileNavVisible } from "./atoms/UIAtoms";
 import { currentUser } from "./atoms/UserAtoms";
 import { getMe } from "./services/UserServices";
 import Wishlist from "./pages/Wishlist";
+import Topper from "./Components/Header/Components/Topper";
 
 const BasicLayout = ({ children }) => {
   const [isOpen] = useAtom(mobileNavVisible);
@@ -46,9 +47,12 @@ const BasicLayout = ({ children }) => {
   }, [isOpen]);
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <div style={{ borderBottom: "1px solid #f1f1f1" }}>
+      <Topper />
+      <div className="primary_header">
+        {/* <div style={{ position: "sticky", top: "0" }}> */}
         <Header />
         <Navbar />
+        {/* </div> */}
         <CSSTransition
           in={isOpen}
           nodeRef={nodeRef}

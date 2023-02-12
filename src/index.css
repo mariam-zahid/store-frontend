@@ -1,6 +1,7 @@
 :root {
-  --primary: #212529;
-  --primary-light: #343a40;
+  --primary: #1a332d;
+  --primary-light: rgba(52, 58, 64, 0.5);
+  --text-primary: #ce9969;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
@@ -36,7 +37,16 @@ body {
 }
 
 ::selection {
-  background: #2125292d;
+  background: #1a332d;
+  color: white;
+}
+
+.primary_header {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  z-index: 10;
+  position: sticky;
+  top: 0;
 }
 
 .primary__link {

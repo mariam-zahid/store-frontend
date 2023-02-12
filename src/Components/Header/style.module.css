@@ -34,7 +34,7 @@
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: #3f3f3f;
+  background-color: var(--text-primary);
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -43,7 +43,6 @@
 
 .menu-toggle {
   justify-self: end;
-  margin-right: 25px;
   display: none;
 }
 
@@ -146,7 +145,7 @@
     transition: 0.3s;
   }
   .link:hover svg {
-    fill: inherit;
+    fill: var(--text-primary);
   }
   .menu-toggle {
     display: none;

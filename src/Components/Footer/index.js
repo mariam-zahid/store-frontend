@@ -156,7 +156,7 @@ const Footer = () => {
             latest trends and customized products!
             <span style={{ textDecoration: "underline" }}>
               <Link
-                to="/"
+                to="/account/login"
                 className={`primary__link ${styles["link__column-link"]}`}
               >
                 Login

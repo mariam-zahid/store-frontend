@@ -18,7 +18,7 @@ const Topper = () => {
           test-email@email.com
         </div>
         <div className={styles["topper__main-delivery"]}>
-          3-5 Business days delivery &amp; Free Returns
+          3-5 Business days delivery
         </div>
       </Container>
     </div>
