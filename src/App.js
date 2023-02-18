@@ -9,6 +9,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 // pages
 import Homepage from "./pages/Homepage";
+import Catalogue from "./pages/Catalogue";
 import Category from "./pages/Category";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
@@ -76,6 +77,7 @@ const App = () => {
         <BasicLayout>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/catalogue" element={<Catalogue />} />
             <Route exact path="/category" element={<Category />} />
             <Route exact path="/shop" element={<Shop />} />
             <Route exact path="/cart" element={<Cart />} />

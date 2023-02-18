@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary: #1a332d;
   --primary-light: rgba(52, 58, 64, 0.5);
@@ -30,6 +34,27 @@ body {
   text-align: left;
   background-color: #fff;
   /* height: 100%; */
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h3 {
+  font-size: 1.17rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .App {

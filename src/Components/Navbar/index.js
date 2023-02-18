@@ -7,8 +7,8 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <ul className={styles["navbar__links"]}>
         <li className={styles[["navbar__link"]]}>
-          <Link className="primary__link" to="/new-arrivals">
-            New Arrivals
+          <Link className="primary__link" to="/catalogue">
+            Catalogue
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
