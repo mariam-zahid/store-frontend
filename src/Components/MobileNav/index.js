@@ -21,6 +21,9 @@ const MobileNav = ({ innerRef }) => {
           <Link to="/catalogue">Catalogue</Link>
         </li>
         <li onClick={onNavigationClick} className={styles["nav-item"]}>
+          <Link to="/price-list">Price List</Link>
+        </li>
+        <li onClick={onNavigationClick} className={styles["nav-item"]}>
           <Link to="/shop">Shop</Link>
         </li>
         <li onClick={onNavigationClick} className={styles["nav-item"]}>

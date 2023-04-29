@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import Select from "react-select";
 import style from "./style.module.css";
 import WrapperContainer from "../../Components/UI/WrapperContainer";
 import Slider from "react-slick";
@@ -109,6 +110,7 @@ const ProductDetails = (props) => {
       });
     });
   };
+  console.log("selectedAttributes", selectedAttributes);
   return (
     <div>
       <WrapperContainer>
@@ -162,7 +164,7 @@ const ProductDetails = (props) => {
               {selectedVariant.inventory > 0 ? "In stock" : "Out of Stock!"}
             </div>
             <div>
-              Attributes List
+              {/* Attributes List */}
               {product.attributes &&
                 product.attributes?.map((item, idx) => (
                   <div key={idx}>
@@ -171,12 +173,32 @@ const ProductDetails = (props) => {
                     <div className="my-6">
                       <div className=" items-center gap-4 text-xl">
                         <label htmlFor="color">
-                          Choose {item?.attribute?.label}:
+                          Select {item?.attribute?.label}:
                         </label>
-                        <select
+                        <Select
+                          value={getAttributeValue(item?.attribute?._id)}
+                          onChange={(e) => {
+                            // e.preventDefault();
+                            handleAttribute(e, item?.attribute);
+                          }}
+                          options={item?.attribute?.value?.map((items) => ({
+                            value: items,
+                            label: items,
+                          }))}
+                          //   <option
+                          //     key={items}
+                          //     value={items}
+                          //     className="text-black"
+                          //   >
+                          //     <div className="p-2">{items} </div>
+                          //   </option>
+                          // ))}
+                        />
+                        {/* <select
                           name={item?.attribute?.label}
                           id={item?.attribute?.label}
                           value={getAttributeValue(item?.attribute?._id)}
+                          className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                           onChange={(e) => {
                             e.preventDefault();
                             handleAttribute(e, item?.attribute);
@@ -192,7 +214,7 @@ const ProductDetails = (props) => {
                               <div className="p-2">{items} </div>
                             </option>
                           ))}
-                        </select>
+                        </select> */}
                       </div>
                     </div>
                   </div>

@@ -12,8 +12,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>
-          <Link className="primary__link" to="/lorem-exclusive">
-            Shivaz Exclusive
+          <Link className="primary__link" to="/price-list">
+            Price List
           </Link>
         </li>
         <li className={styles[["navbar__link"]]}>

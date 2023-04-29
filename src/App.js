@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -25,6 +30,7 @@ import { currentUser } from "./atoms/UserAtoms";
 import { getMe } from "./services/UserServices";
 import Wishlist from "./pages/Wishlist";
 import Topper from "./Components/Header/Components/Topper";
+import PriceList from "./pages/PriceList";
 
 const BasicLayout = ({ children }) => {
   const [isOpen] = useAtom(mobileNavVisible);
@@ -70,14 +76,26 @@ const BasicLayout = ({ children }) => {
   );
 };
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 const App = () => {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <BasicLayout>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/catalogue" element={<Catalogue />} />
+            <Route exact path="/price-list" element={<PriceList />} />
             <Route exact path="/category" element={<Category />} />
             <Route exact path="/shop" element={<Shop />} />
             <Route exact path="/cart" element={<Cart />} />
