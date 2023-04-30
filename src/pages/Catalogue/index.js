@@ -1,14 +1,37 @@
 import React from "react";
 import WrapperContainer from "../../Components/UI/WrapperContainer";
+import s from "./Catalogue.module.css";
 import catalogue_hero from "../../assets/images/catalogue_hero.png";
-import section1 from "../../assets/images/section1.png";
-import section2 from "../../assets/images/section2.png";
-import bedsheet1 from "../../assets/images/bedsheet1.jpeg";
-import bedsheet2 from "../../assets/images/bedsheet2.jpeg";
+import section1 from "../../assets/images/section1.jpg";
+import section2 from "../../assets/images/section2.jpg";
+import section3 from "../../assets/images/section3.png";
+import section4 from "../../assets/images/section4.jpg";
+import section5 from "../../assets/images/section5.jpg";
+import section6 from "../../assets/images/section6.jpg";
+import section7 from "../../assets/images/section7.jpg";
+import section8 from "../../assets/images/section8.jpg";
+import duvet1 from "../../assets/images/duvet1.jpg";
+import duvet2 from "../../assets/images/duvet2.jpeg";
+import pillow1 from "../../assets/images/pillow1.jpg";
+import pillow2 from "../../assets/images/pillow2.jpg";
+import cover1 from "../../assets/images/cover1.jpg";
+import cover2 from "../../assets/images/cover2.jpg";
+import runner1 from "../../assets/images/runner1.jpg";
+import runner2 from "../../assets/images/runner2.jpg";
+import towel1 from "../../assets/images/towel1.jpg";
+import towel2 from "../../assets/images/towel2.jpg";
+import mattress1 from "../../assets/images/mattress1.jpg";
+import mattress2 from "../../assets/images/mattress2.jpg";
+import print1 from "../../assets/images/print1.jpg";
+import print2 from "../../assets/images/print2.jpg";
+import bedsheet1 from "../../assets/images/bedsheet_v111.jpg";
+import bedsheet2 from "../../assets/images/bedsheet2.jpg";
 import Button from "../../Components/UI/Button";
 
-const WrapperCatalogue = ({ children }) => (
-  <div className="container mx-auto flex flex-col items-center justify-between w-full my-10 lg:flex-row">
+const WrapperCatalogue = ({ children, className }) => (
+  <div
+    className={`container mx-auto flex flex-col items-center justify-between w-full my-10 lg:flex-row ${className}`}
+  >
     {children}
   </div>
 );
@@ -74,37 +97,19 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-end-auto col-start-3 md:col-start-6 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={bedsheet1} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-1 md:col-start-1 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={bedsheet2} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-7 col-span-12 md:col-span-6 md:p-16 md:pt-12">
             <h3 className="my-4 text-2xl">Premium Bed Sheets</h3>
@@ -138,37 +143,19 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-span-1 col-start-1 md:col-start-1 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={duvet1} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-3 md:col-start-7 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={duvet2} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-1 col-span-12 md:col-span-6 md:p-16 md:pt-12">
             <h3 className="my-4 text-2xl">Duvets/Comforters</h3>
@@ -192,7 +179,7 @@ const Catalogue = () => {
             maxHeight: "500px",
             objectFit: "cover",
           }}
-          src={section1}
+          src={section3}
           alt="Primary Logo"
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
@@ -201,40 +188,22 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-end-auto col-start-3 md:col-start-6 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={pillow1} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-1 md:col-start-1 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={pillow2} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-7 col-span-12 md:col-span-6 md:p-16 md:pt-12">
-            <h3 className="my-4 text-2xl">Premium Bed Sheets</h3>
+            <h3 className="my-4 text-2xl">Pillows/Cushions</h3>
             <p className="my-4">
               The ideal economic sleeping pillow and cushions. A durable
               poly-cotton shell, lightly filled with fibre, designed to be
@@ -254,7 +223,7 @@ const Catalogue = () => {
             maxHeight: "500px",
             objectFit: "cover",
           }}
-          src={section2}
+          src={section4}
           alt="Primary Logo"
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
@@ -263,37 +232,19 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-span-1 col-start-1 md:col-start-1 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={cover1} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-3 md:col-start-7 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={cover2} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-1 col-span-12 md:col-span-6 md:p-16 md:pt-12">
             <h3 className="my-4 text-2xl">Pillow, Duvets Covers</h3>
@@ -316,7 +267,7 @@ const Catalogue = () => {
             maxHeight: "500px",
             objectFit: "cover",
           }}
-          src={section1}
+          src={section5}
           alt="Primary Logo"
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
@@ -325,40 +276,22 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-end-auto col-start-3 md:col-start-6 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={runner2} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-1 md:col-start-1 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={runner1} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-7 col-span-12 md:col-span-6 md:p-16 md:pt-12">
-            <h3 className="my-4 text-2xl">Premium Bed Sheets</h3>
+            <h3 className="my-4 text-2xl">Bed Runner</h3>
             <p className="my-4">
               This Bed Runner with cushion covers will surely fetch attention as
               well as compliments from your guests. In addition, it is easy to
@@ -378,7 +311,7 @@ const Catalogue = () => {
             maxHeight: "500px",
             objectFit: "cover",
           }}
-          src={section2}
+          src={section6}
           alt="Primary Logo"
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
@@ -387,37 +320,19 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-span-1 col-start-1 md:col-start-1 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={towel1} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-3 md:col-start-7 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={towel2} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-1 col-span-12 md:col-span-6 md:p-16 md:pt-12">
             <h3 className="my-4 text-2xl">Bath, Hand, Face Towels</h3>
@@ -444,7 +359,7 @@ const Catalogue = () => {
             maxHeight: "500px",
             objectFit: "cover",
           }}
-          src={section1}
+          src={section7}
           alt="Primary Logo"
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
@@ -453,37 +368,19 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-end-auto col-start-3 md:col-start-6 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={mattress1} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-1 md:col-start-1 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={mattress2} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-7 col-span-12 md:col-span-6 md:p-16 md:pt-12">
             <h3 className="my-4 text-2xl">Mattress Protector</h3>
@@ -509,7 +406,7 @@ const Catalogue = () => {
             maxHeight: "500px",
             objectFit: "cover",
           }}
-          src={section2}
+          src={section8}
           alt="Primary Logo"
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
@@ -518,37 +415,19 @@ const Catalogue = () => {
         </h3>
         {/* </div> */}
       </div>
-      <WrapperCatalogue>
+      <WrapperCatalogue className="max-w-7xl">
         <div className="p-4 md:p-0 grid grid-cols-12">
           <div
             style={{ zIndex: 2 }}
             className="relative row-start-1 row-span-1 col-start-1 md:col-start-1 col-span-10 md:col-span-7"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet1}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={print2} alt="Primary Logo" />
           </div>
           <div
             style={{ zIndex: 1 }}
             className="relative row-start-1 row-span-2 col-start-3 md:col-start-7 col-span-10 md:col-span-6 grid-secondary"
           >
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                maxHeight: "700px",
-                objectFit: "cover",
-              }}
-              src={bedsheet2}
-              alt="Primary Logo"
-            />
+            <img className={s.image} src={print1} alt="Primary Logo" />
           </div>
           <div className="row-start-3 md:row-start-2 col-start-1 md:col-start-1 col-span-12 md:col-span-6 md:p-16 md:pt-12">
             <h3 className="my-4 text-2xl">Printed Bed Sheets</h3>
