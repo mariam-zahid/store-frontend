@@ -3,9 +3,14 @@ import LoadingDots from "../LoadingDots";
 
 const Button = (props) => {
   return (
-    <button disabled={props.loading} onClick={props.action && props.action} className="primary__button">
+    <button
+      style={props.style}
+      disabled={props.loading}
+      onClick={props.action && props.action}
+      className="primary__button"
+    >
       {props.loading ? (
-        <i style={{paddingLeft: '0.5rem', margin: '0' }}>
+        <i style={{ paddingLeft: "0.5rem", margin: "0" }}>
           Loading <LoadingDots />
         </i>
       ) : (

@@ -4,6 +4,7 @@ import WrapperContainer from "../../Components/UI/WrapperContainer";
 import FeaturesSection from "./Components/FeaturesSection";
 import HeroCarousel from "./Components/HeroCarousel";
 import ProductCardSection from "./Components/ProductCardSection";
+import ExclusiveLinenCollection from "./Components/ExclusiveLinenCollection";
 
 const Homepage = () => {
   return (
@@ -12,9 +13,15 @@ const Homepage = () => {
       {/* Hero carousel section goes here */}
       <WrapperContainer>
         <ProductCardSection />
-        {/* Features section */}
+      </WrapperContainer>
+      {/* Exclusive linen collection section */}
+      <ExclusiveLinenCollection />
+      {/* Features section */}
+      <WrapperContainer>
         <FeaturesSection />
-        {/* Knowledge section */}
+      </WrapperContainer>
+      {/* Knowledge section */}
+      <WrapperContainer>
         <h2
           style={{
             textAlign: "center",
