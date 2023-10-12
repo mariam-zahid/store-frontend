@@ -12,9 +12,9 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-evenly;
-  width: 50%;
-  max-width: 20rem;
+  justify-content: center;
+  width: 100%;
+  /* max-width: 20rem; */
   height: 3rem;
   text-decoration: none;
   color: inherit;

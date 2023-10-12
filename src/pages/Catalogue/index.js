@@ -121,7 +121,7 @@ const Catalogue = () => {
               washable, these durable and resilient sheets are the ideal choice
               for any hotel.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
@@ -169,7 +169,7 @@ const Catalogue = () => {
               vibrant use of colors, designs and patterns make the collection a
               unique and trendy one.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
@@ -215,7 +215,7 @@ const Catalogue = () => {
               poly-cotton shell, lightly filled with fibre, designed to be
               machine washable and to last long.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
@@ -261,7 +261,7 @@ const Catalogue = () => {
               optimum quality. These are available in a range of color, size and
               design according to your demand.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
@@ -307,7 +307,7 @@ const Catalogue = () => {
               well as compliments from your guests. In addition, it is easy to
               maintain and soft to step in.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
@@ -357,7 +357,7 @@ const Catalogue = () => {
               sure guests feel pampered by each aspect of the bathroom
               experience.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
@@ -406,7 +406,7 @@ const Catalogue = () => {
               dirt, water and anything else that might compromise its
               cleanliness or comfort.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
@@ -456,7 +456,7 @@ const Catalogue = () => {
               sure guests feel pampered by each aspect of the bathroom
               experience.
             </p>
-            <Button>Shop Now</Button>
+            {/* <Button>Shop Now</Button> */}
           </div>
         </div>
       </WrapperCatalogue>
