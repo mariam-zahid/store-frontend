@@ -10,9 +10,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={styles["footer__wrapper"]}>
-      <div className={styles["main__footer"]}>
+      {/* <div className={styles["main__footer"]}>
         <div className={styles["main__footer-links"]}>
-          {/* Shop the site section */}
           <div className={styles["main__footer-link__column"]}>
             <div className={styles["link__column-header"]}>Shop the site</div>
             <div
@@ -44,7 +43,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          {/* Discover section */}
           <div className={styles["main__footer-link__column"]}>
             <div className={styles["link__column-header"]}>Discover</div>
             <div
@@ -76,7 +74,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          {/* Customer service section */}
           <div className={styles["main__footer-link__column"]}>
             <div className={styles["link__column-header"]}>
               Customer Service
@@ -122,32 +119,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          {/* My account section */}
-          {/* <div className={styles["main__footer-link__column"]}>
-            <div className={styles["link__column-header"]}>My account</div>
-            <div
-              className={`${styles["link__column-data"]} double-line-height`}
-            >
-              <Link
-                to="/"
-                className={`primary__link ${styles["link__column-link"]}`}
-              >
-                Login
-              </Link>
-              <Link
-                to="/"
-                className={`primary__link ${styles["link__column-link"]}`}
-              >
-                Sign Up
-              </Link>
-              <Link
-                to="/"
-                className={`primary__link ${styles["link__column-link"]}`}
-              >
-                My Wishlist
-              </Link>
-            </div>
-          </div> */}
         </div>
         <div className={styles["main__footer-misc"]}>
           <div className={styles["misc__column-header"]}>Sign Up and Save</div>
@@ -188,7 +159,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles["footer__copyright"]}>
         &copy; {currentYear} SHIVAZ | All rights reserved
       </div>
@@ -197,3 +168,34 @@ const Footer = () => {
 };
 
 export default Footer;
+
+{
+  /* My account section */
+}
+{
+  /* <div className={styles["main__footer-link__column"]}>
+            <div className={styles["link__column-header"]}>My account</div>
+            <div
+              className={`${styles["link__column-data"]} double-line-height`}
+            >
+              <Link
+                to="/"
+                className={`primary__link ${styles["link__column-link"]}`}
+              >
+                Login
+              </Link>
+              <Link
+                to="/"
+                className={`primary__link ${styles["link__column-link"]}`}
+              >
+                Sign Up
+              </Link>
+              <Link
+                to="/"
+                className={`primary__link ${styles["link__column-link"]}`}
+              >
+                My Wishlist
+              </Link>
+            </div>
+          </div> */
+}

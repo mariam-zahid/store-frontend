@@ -18,7 +18,7 @@ const Topper = () => {
           shivazhandloom@gmail.com
         </div>
         <div className={styles["topper__main-delivery"]}>
-          3-5 Business days delivery
+          5-10 Business days delivery
         </div>
       </Container>
     </div>

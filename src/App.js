@@ -55,12 +55,12 @@ const BasicLayout = ({ children }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <Topper />
-      <div className="primary_header">
+      <div className="primary_header pb-4">
         {/* <div style={{ position: "sticky", top: "0" }}> */}
         <Header />
-        <Navbar />
+        {/* <Navbar /> */}
         {/* </div> */}
-        <CSSTransition
+        {/* <CSSTransition
           in={isOpen}
           nodeRef={nodeRef}
           timeout={100}
@@ -68,7 +68,7 @@ const BasicLayout = ({ children }) => {
           unmountOnExit
         >
           <MobileNav innerRef={nodeRef} />
-        </CSSTransition>
+        </CSSTransition> */}
       </div>
       <main style={{ flexGrow: 1, padding: "0" }}>{children}</main>
       <Footer />
@@ -93,7 +93,8 @@ const App = () => {
         <ScrollToTop />
         <BasicLayout>
           <Routes>
-            <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/" element={<Catalogue />} />
+            {/* <Route exact path="/" element={<Homepage />} />
             <Route exact path="/catalogue" element={<Catalogue />} />
             <Route exact path="/price-list" element={<PriceList />} />
             <Route exact path="/category" element={<Category />} />
@@ -105,7 +106,7 @@ const App = () => {
             <Route exact path="/shop/:slug" element={<ProductDetails />} />
             <Route exact path="/account/login" element={<Login />} />
             <Route exact path="/account/register" element={<Register />} />
-            <Route path="*" element={<Homepage />} />
+            <Route path="*" element={<Homepage />} /> */}
           </Routes>
         </BasicLayout>
       </Router>

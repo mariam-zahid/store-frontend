@@ -93,7 +93,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Premium Bedsheets
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Premium Bedsheets
+          </span>
         </h3>
         {/* </div> */}
       </div>
@@ -139,7 +141,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Duvets/Comforters
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Duvets/Comforters
+          </span>
         </h3>
         {/* </div> */}
       </div>
@@ -184,7 +188,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Pillows/Cushions
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Pillows/Cushions
+          </span>
         </h3>
         {/* </div> */}
       </div>
@@ -228,7 +234,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Pillow, Duvets Covers
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Pillow, Duvets Covers
+          </span>
         </h3>
         {/* </div> */}
       </div>
@@ -272,7 +280,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Bed Runner
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Bed Runner
+          </span>
         </h3>
         {/* </div> */}
       </div>
@@ -316,7 +326,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Bath, Hand, Face Towels
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Bath, Hand, Face Towels
+          </span>
         </h3>
         {/* </div> */}
       </div>
@@ -364,7 +376,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Mattress Protector
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Mattress Protector
+          </span>
         </h3>
         {/* </div> */}
       </div>
@@ -411,7 +425,9 @@ const Catalogue = () => {
         />
         {/* <div className="w-full text-xl absolute inset-y-1/2 flex justify-content-center"> */}
         <h3 className="w-full text-2xl absolute inset-y-1/2 text-center">
-          Printed Bed Sheets
+          <span className="px-12 py-2 bg-zinc-300/50 rounded shadow-xl">
+            Printed Bed Sheets
+          </span>
         </h3>
         {/* </div> */}
       </div>

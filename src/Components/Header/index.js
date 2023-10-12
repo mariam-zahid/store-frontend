@@ -36,9 +36,7 @@ const Header = () => {
       {/* <div> */}
       <header className={styles.headerContainer}>
         <Container style={{ position: "sticky", top: 0 }}>
-          <div className={styles.searchBar}>
-            <SearchBar />
-          </div>
+          <div className={styles.searchBar}>{/* <SearchBar /> */}</div>
 
           <Link style={{ height: "70px" }} to="/" className={` ${styles.logo}`}>
             <img
@@ -53,7 +51,7 @@ const Header = () => {
           </Link>
 
           <div className={styles.links}>
-            <Link to="/wishlist" className={styles.link}>
+            {/* <Link to="/wishlist" className={styles.link}>
               <HeartIcon />
             </Link>
             <Link to="/account" className={styles.link}>
@@ -61,9 +59,9 @@ const Header = () => {
             </Link>
             <Link to="/cart" className={styles.link}>
               <ShoppingCartIcon />
-            </Link>
+            </Link> */}
           </div>
-          <HamburgerMenu />
+          {/* <HamburgerMenu /> */}
         </Container>
       </header>
     </>
