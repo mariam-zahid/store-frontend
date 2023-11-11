@@ -30,9 +30,7 @@ const Shop = () => {
               />
               <div className={style.productInfo}>
                 <div className={style.productTitle}>{product.name}</div>
-                <div className={style.productPrice}>
-                  ₹{product?.defaultVariant?.price}
-                </div>
+                <div className={style.productPrice}>₹{product?.price}</div>
               </div>
               <Link to={product.slug}>
                 <Button>Buy now</Button>

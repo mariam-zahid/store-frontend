@@ -30,7 +30,7 @@ export const makeUrl = ({ uri, pathParams, query, version }, host) => {
 };
 
 export const getDefaultHeaders = () => ({
-  authorization: localStorage.getItem("accessToken") || null,
+  authorization: localStorage.getItem("accessToken"),
   "Content-Type": "application/json",
 });
 

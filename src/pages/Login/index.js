@@ -41,7 +41,7 @@ const Login = () => {
     })
       .then((response) => {
         setLoginLoading(false);
-        setUserDetails(response?.user);
+        setUserDetails(response?.data);
         setLoginError("");
         navigate("/account");
       })

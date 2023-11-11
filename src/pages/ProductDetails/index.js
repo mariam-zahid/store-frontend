@@ -32,8 +32,8 @@ const settings = {
 const ProductDetails = (props) => {
   const slickRef = useRef(null);
   const [product, setProduct] = useState({});
-  const [selectedVariant, setSelectedVariant] = useState({});
-  const [selectedAttributes, setSelectedAttributes] = useState([]);
+  // const [selectedVariant, setSelectedVariant] = useState({});
+  // const [selectedAttributes, setSelectedAttributes] = useState([]);
   // const [attributeList, setAttributeList] = useState([]);
   const [addToCartLoading, setAddToCartLoading] = useState(false);
   const [wishlistLoading, setWishlistLoading] = useState(false);
@@ -46,8 +46,8 @@ const ProductDetails = (props) => {
     // fetch product details from api
     getSingleProduct({ pathParams: { id: slug } }).then((res) => {
       setProduct(res.data);
-      setSelectedVariant(res.data.defaultVariant);
-      setSelectedAttributes(res.data.defaultVariant.attributes);
+      // setSelectedVariant(res.data.defaultVariant);
+      // setSelectedAttributes(res.data.defaultVariant.attributes);
       // const attributeList = [];
       // for(let i=0;i<res.data.attributes.length;i++){
       //   attributeList.push(res.data.attributes[i].attribute.value[0])
@@ -61,56 +61,56 @@ const ProductDetails = (props) => {
     });
   }, [slug]);
 
-  const getAttributeValue = (attributeId) => {
-    const attribute = selectedAttributes.find(
-      (attr) => attr.attribute === attributeId
-    );
+  // const getAttributeValue = (attributeId) => {
+  //   const attribute = selectedAttributes.find(
+  //     (attr) => attr.attribute === attributeId
+  //   );
 
-    return attribute ? attribute.value : "";
-  };
+  //   return attribute ? attribute.value : "";
+  // };
 
-  useEffect(() => {
-    if (
-      product.variants &&
-      product.variants.length &&
-      selectedAttributes &&
-      selectedAttributes.length
-    ) {
-      const variant = product?.variants?.find((variant) => {
-        return variant?.attributes?.every((attr) => {
-          return (
-            selectedAttributes.find(
-              (selectedAttr) =>
-                selectedAttr.attribute === attr.attribute &&
-                selectedAttr.attributeValue === attr.attributeValue
-            ) !== undefined
-          );
-        });
-      });
+  // useEffect(() => {
+  //   if (
+  //     product.variants &&
+  //     product.variants.length &&
+  //     selectedAttributes &&
+  //     selectedAttributes.length
+  //   ) {
+  //     const variant = product?.variants?.find((variant) => {
+  //       return variant?.attributes?.every((attr) => {
+  //         return (
+  //           selectedAttributes.find(
+  //             (selectedAttr) =>
+  //               selectedAttr.attribute === attr.attribute &&
+  //               selectedAttr.attributeValue === attr.attributeValue
+  //           ) !== undefined
+  //         );
+  //       });
+  //     });
 
-      if (variant) {
-        setSelectedVariant(variant);
-      } else {
-        alert("No variant found");
-      }
-    }
-  }, [selectedAttributes, product.variants]);
+  //     if (variant) {
+  //       setSelectedVariant(variant);
+  //     } else {
+  //       alert("No variant found");
+  //     }
+  //   }
+  // }, [selectedAttributes, product.variants]);
 
-  const handleAttribute = (e, attribute) => {
-    console.log("handleAttribute", e?.target?.value, attribute);
-    setSelectedAttributes((prev) => {
-      return prev.map((attr) => {
-        if (attr.attribute === attribute._id) {
-          return {
-            ...attr,
-            attributeValue: e?.target?.value,
-          };
-        }
-        return attr;
-      });
-    });
-  };
-  console.log("selectedAttributes", selectedAttributes);
+  // const handleAttribute = (e, attribute) => {
+  //   console.log("handleAttribute", e?.target?.value, attribute);
+  //   setSelectedAttributes((prev) => {
+  //     return prev.map((attr) => {
+  //       if (attr.attribute === attribute._id) {
+  //         return {
+  //           ...attr,
+  //           attributeValue: e?.target?.value,
+  //         };
+  //       }
+  //       return attr;
+  //     });
+  //   });
+  // };
+  // console.log("selectedAttributes", selectedAttributes);
   return (
     <div>
       <WrapperContainer>
@@ -159,9 +159,10 @@ const ProductDetails = (props) => {
           {/* product info section */}
           <div className={style.productInfoWrapper}>
             <h1 className={style.productName}>{product.name}</h1>
-            <div className={style.productPrice}>₹{selectedVariant.price}</div>
+            <div className={style.productPrice}>₹{product.price}</div>
             <div className={style.productDescription}>
-              {selectedVariant.inventory > 0 ? "In stock" : "Out of Stock!"}
+              In stock
+              {/* {selectedVariant.inventory > 0 ? "In stock" : "Out of Stock!"} */}
             </div>
             <div>
               {/* Attributes List */}
@@ -175,7 +176,7 @@ const ProductDetails = (props) => {
                         <label htmlFor="color">
                           Select {item?.attribute?.label}:
                         </label>
-                        <Select
+                        {/* <Select
                           value={getAttributeValue(item?.attribute?._id)}
                           onChange={(e) => {
                             // e.preventDefault();
@@ -193,7 +194,7 @@ const ProductDetails = (props) => {
                           //     <div className="p-2">{items} </div>
                           //   </option>
                           // ))}
-                        />
+                        /> */}
                         {/* <select
                           name={item?.attribute?.label}
                           id={item?.attribute?.label}
@@ -227,24 +228,24 @@ const ProductDetails = (props) => {
               <button
                 onClick={() => {
                   setAddToCartLoading(true);
-                  addToCart({
-                    body: { variantId: selectedVariant._id, quantity: 1 },
-                  })
-                    .then((res) => {
-                      setAddToCartLoading(false);
+                  // addToCart({
+                  //   body: { variantId: selectedVariant._id, quantity: 1 },
+                  // })
+                  //   .then((res) => {
+                  //     setAddToCartLoading(false);
 
-                      toast.success("Success Notification !", {
-                        position: toast.POSITION.TOP_RIGHT,
-                      });
-                      // props.history.push("/cart");
-                    })
-                    .catch((err) => {
-                      console.log("err while adding to cart: ", err);
-                      toast.error(err?.response?.message, {
-                        position: toast.POSITION.TOP_RIGHT,
-                      });
-                      setAddToCartLoading(false);
-                    });
+                  //     toast.success("Success Notification !", {
+                  //       position: toast.POSITION.TOP_RIGHT,
+                  //     });
+                  //     // props.history.push("/cart");
+                  //   })
+                  //   .catch((err) => {
+                  //     console.log("err while adding to cart: ", err);
+                  //     toast.error(err?.response?.message, {
+                  //       position: toast.POSITION.TOP_RIGHT,
+                  //     });
+                  //     setAddToCartLoading(false);
+                  //   });
                 }}
                 className={style.addCartButton}
               >

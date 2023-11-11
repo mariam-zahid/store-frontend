@@ -10,7 +10,7 @@ import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 import { ReactComponent as ShoppingCartIcon } from "../../assets/icons/shopping-cart.svg";
 import { mobileNavVisible } from "../../atoms/UIAtoms";
-import logo from "../../assets/images/Primary_logo_green.png";
+import logo from "../../assets/images/primary_logo_green.png";
 import Button from "../UI/Button";
 
 const HamburgerMenu = () => {

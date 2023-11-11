@@ -11,7 +11,7 @@ export const userLogin = async ({ body }) => {
     .then((loginResponse) => {
       localStorage.setItem("accessToken", loginResponse.accessToken);
       localStorage.setItem("refreshToken", loginResponse.refreshToken);
-      localStorage.setItem("user", JSON.stringify(loginResponse?.user));
+      localStorage.setItem("user", JSON.stringify(loginResponse?.data));
       localStorage.setItem("authenticated", "true");
       return loginResponse;
     })
