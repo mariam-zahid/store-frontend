@@ -159,12 +159,39 @@ const ProductDetails = (props) => {
           {/* product info section */}
           <div className={style.productInfoWrapper}>
             <h1 className={style.productName}>{product.name}</h1>
+            <div>Shop / {product.category}</div>
             <div className={style.productPrice}>₹{product.price}</div>
+            <div className="my-2">
+              <h4>{product.variantAttributesLabel}</h4>
+              <div className="my-2">
+                {product.variants &&
+                  product.variants.map((variant) => (
+                    <div className="cursor-pointer my-1">
+                      <input
+                        className="cursor-pointer"
+                        type="radio"
+                        id={variant.id}
+                        name="variant"
+                        value={variant.value}
+                      />
+                      <label className="pl-2 cursor-pointer" for={variant.id}>
+                        {variant.name}{" "}
+                        {variant.price - product.price ? (
+                          <>(+₹{variant.price - product.price})</>
+                        ) : (
+                          ""
+                        )}
+                      </label>
+                      <br />
+                    </div>
+                  ))}
+              </div>
+            </div>
             <div className={style.productDescription}>
               In stock
               {/* {selectedVariant.inventory > 0 ? "In stock" : "Out of Stock!"} */}
             </div>
-            <div>
+            <div className="hidden">
               {/* Attributes List */}
               {product.attributes &&
                 product.attributes?.map((item, idx) => (
@@ -222,7 +249,14 @@ const ProductDetails = (props) => {
                 ))}
             </div>
             <div className={style.productDescription}>
-              Quantity: <input type="number" min="1" max="10" value="1" />
+              Quantity:{" "}
+              <input
+                className="border border-gray-400 pl-2"
+                type="number"
+                min="1"
+                max="10"
+                value="1"
+              />
             </div>
             <div style={{ display: "flex" }}>
               <button
