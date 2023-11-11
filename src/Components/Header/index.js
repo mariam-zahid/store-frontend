@@ -10,7 +10,7 @@ import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 import { ReactComponent as ShoppingCartIcon } from "../../assets/icons/shopping-cart.svg";
 import { mobileNavVisible } from "../../atoms/UIAtoms";
-import logo from "../../assets/images/primary_logo_green.png";
+import logo from "../../assets/images/Primary_logo_green.png";
 import Button from "../UI/Button";
 
 const HamburgerMenu = () => {
@@ -52,8 +52,8 @@ const Header = () => {
           </Link>
 
           <div className={styles.links}>
-            <Link to="/contact">Contact Us</Link>
-            {/* <Link to="/wishlist" className={styles.link}>
+            {/* <Link to="/contact">Contact Us</Link> */}
+            <Link to="/wishlist" className={styles.link}>
               <HeartIcon />
             </Link>
             <Link to="/account" className={styles.link}>
@@ -61,9 +61,9 @@ const Header = () => {
             </Link>
             <Link to="/cart" className={styles.link}>
               <ShoppingCartIcon />
-            </Link> */}
+            </Link>
           </div>
-          {/* <HamburgerMenu /> */}
+          <HamburgerMenu />
         </Container>
       </header>
     </>
